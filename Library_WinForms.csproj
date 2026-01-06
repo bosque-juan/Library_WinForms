@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DE0A146-0BA2-4D56-89E7-A6A9979DAF42}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Library_WinForms</RootNamespace>
+    <AssemblyName>Library_WinForms</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>Library_WinForms.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aplication\DataAnaliticsService\RestockingBookService.cs" />
+    <Compile Include="Aplication\DataAnaliticsService\SuggestedBookService.cs" />
+    <Compile Include="Aplication\ManagmentService\AuthorService\AuthorManagmentService.cs" />
+    <Compile Include="Aplication\ManagmentService\AuthorService\NationalityService.cs" />
+    <Compile Include="Aplication\ManagmentService\PublisherManagmentService.cs" />
+    <None Include="Readme.md" />
+    <Compile Include="Domain\DTOs\AuthorDTO.cs" />
+    <Compile Include="Domain\DTOs\Book_LanguageDTO.cs" />
+    <Compile Include="Domain\DTOs\SexDTO.cs" />
+    <Compile Include="Domain\DTOs\GenreDTO.cs" />
+    <Compile Include="Domain\DTOs\NationalityDTO.cs" />
+    <Compile Include="Domain\DTOs\PublisherDTO.cs" />
+    <Compile Include="Domain\Entities\Author.cs" />
+    <Compile Include="Domain\Entities\Nationality.cs" />
+    <Compile Include="Domain\Entities\Sex.cs" />
+    <Compile Include="Domain\Interfaces\IBookRepository.cs" />
+    <Compile Include="Domain\Interfaces\IEditorialRepository.cs" />
+    <Compile Include="Domain\Interfaces\IBookLanguageRepository.cs" />
+    <Compile Include="Domain\Interfaces\ISexRepository.cs" />
+    <Compile Include="Domain\Interfaces\IGenreRepository.cs" />
+    <Compile Include="Domain\Interfaces\INationalityRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\DaoAnalitics\DaoRestockingBooks.cs" />
+    <Compile Include="Infrastructure\Repositories\DaoAnalitics\DaoSuggestedBooks.cs" />
+    <Compile Include="Infrastructure\Repositories\DaoManagment\AuthorDao\DaoNationality.cs" />
+    <Compile Include="Infrastructure\Repositories\DaoManagment\AuthorDao\DaoAuthorManagment.cs" />
+    <Compile Include="Domain\Interfaces\IAuthorRepository.cs" />
+    <Compile Include="Infrastructure\Repositories\DaoManagment\DaoPublisherManagment.cs" />
+    <Compile Include="Infrastructure\DataAccess.cs" />
+    <Compile Include="Infrastructure\Repositories\DaoAnalitics\DaoSalesReport.cs" />
+    <Compile Include="Domain\DTOs\AuthorDTORecomended.cs" />
+    <Compile Include="Infrastructure\Repositories\DaoManagment\DaoBookManagment.cs" />
+    <Compile Include="Infrastructure\Parameter.cs" />
+    <Compile Include="Presentation\Managment - CRUD\AuthorManagment\FrmAuthorManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\AuthorManagment\FrmAuthorManagment.designer.cs">
+      <DependentUpon>FrmAuthorManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\AuthorManagment\FrmAuthorTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\AuthorManagment\FrmAuthorTransaction.designer.cs">
+      <DependentUpon>FrmAuthorTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Entities\Publisher.cs" />
+    <Compile Include="Domain\Entities\Genre.cs" />
+    <Compile Include="Domain\Entities\Book_Language.cs" />
+    <Compile Include="Domain\Entities\Book.cs" />
+    <Compile Include="Presentation\DataAnalitics\FrmSuggestedBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DataAnalitics\FrmSuggestedBooks.Designer.cs">
+      <DependentUpon>FrmSuggestedBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\EditorialManagment\FrmPublisherManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\EditorialManagment\FrmPublisherManagment.designer.cs">
+      <DependentUpon>FrmPublisherManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\EditorialManagment\FrmPublisherTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\EditorialManagment\FrmPublisherTransaction.designer.cs">
+      <DependentUpon>FrmPublisherTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\SystemAbout\FrmSystemGoal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\SystemAbout\FrmSystemGoal.Designer.cs">
+      <DependentUpon>FrmSystemGoal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\DataAnalitics\FrmSalesReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DataAnalitics\FrmSalesReport.Designer.cs">
+      <DependentUpon>FrmSalesReport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Aplication\ManagmentService\BookManagmentService.cs" />
+    <Compile Include="Domain\DTOs\BookDTO.cs" />
+    <Compile Include="Presentation\DataAnalitics\FrmRestockingBooks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\DataAnalitics\FrmRestockingBooks.Designer.cs">
+      <DependentUpon>FrmRestockingBooks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\BookManagment\FrmBookTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\BookManagment\FrmBookTransaction.designer.cs">
+      <DependentUpon>FrmBookTransaction.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\BookManagment\FrmBookManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\Managment - CRUD\BookManagment\FrmBookManagment.designer.cs">
+      <DependentUpon>FrmBookManagment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation\FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Aplication\DataAnaliticsService\SalesReportService.cs" />
+    <EmbeddedResource Include="Presentation\Managment - CRUD\AuthorManagment\FrmAuthorManagment.resx">
+      <DependentUpon>FrmAuthorManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Managment - CRUD\AuthorManagment\FrmAuthorTransaction.resx">
+      <DependentUpon>FrmAuthorTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DataAnalitics\FrmSuggestedBooks.resx">
+      <DependentUpon>FrmSuggestedBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Managment - CRUD\EditorialManagment\FrmPublisherManagment.resx">
+      <DependentUpon>FrmPublisherManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Managment - CRUD\EditorialManagment\FrmPublisherTransaction.resx">
+      <DependentUpon>FrmPublisherTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\SystemAbout\FrmSystemGoal.resx">
+      <DependentUpon>FrmSystemGoal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DataAnalitics\FrmRestockingBooks.resx">
+      <DependentUpon>FrmRestockingBooks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Managment - CRUD\BookManagment\FrmBookTransaction.resx">
+      <DependentUpon>FrmBookTransaction.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\Managment - CRUD\BookManagment\FrmBookManagment.resx">
+      <DependentUpon>FrmBookManagment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation\DataAnalitics\FrmSalesReport.resx">
+      <DependentUpon>FrmSalesReport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Presentation\Resources\library_background.jpg" />
+    <Content Include=".gitignore" />
+    <Content Include="MEJORAS.TXT" />
+    <Content Include="Script\Library_DDL_Statment.sql" />
+    <Content Include="Script\Library_DML_Statment.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
