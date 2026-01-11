@@ -16,7 +16,7 @@ namespace Library_WinForms.Domain.Entities
         private string description;
         private int stock;
         private Genre genre;
-        private Publisher editorial;
+        private Publisher publisher;
         private DateTime releaseDate;
         private Book_Language languaje;
         private Author author;
@@ -33,7 +33,7 @@ namespace Library_WinForms.Domain.Entities
             set { isbn = value; }
         }
 
-        public string Title    
+        public string Title
         {
             get { return title; }
             set { title = value; }
@@ -59,10 +59,10 @@ namespace Library_WinForms.Domain.Entities
             get { return genre; }
             set { genre = value; }
         }
-        public Publisher _Editorial
+        public Publisher _Publisher
         {
-            get { return editorial; }
-            set { editorial = value; }
+            get { return publisher; }
+            set { publisher = value; }
         }
         public DateTime ReleaseDate
         {
